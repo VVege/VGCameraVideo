@@ -67,6 +67,14 @@ class VGVideoWritter: NSObject {
     }
     
     //MARK: - Operation
+    
+    public func clearTempFile() {
+        let outputURL = VGVideoWritter.createTemplateFileURL()
+        if FileManager.default.fileExists(atPath: outputURL.path) {
+            try? FileManager.default.removeItem(at: outputURL)
+        }
+    }
+    
     public func startWriting() {
         processQueue.async {
             self.isWriting = true

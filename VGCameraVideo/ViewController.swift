@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     let audioDataOutput = AVCaptureAudioDataOutput()
     
     private var videoWriter: VGVideoWritter!
-    
+    private var isWritting: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -47,9 +47,21 @@ class ViewController: UIViewController {
         setupAssetWriter()
         
         let button = UIButton(frame: CGRect(x: 19, y: 20, width: 50, height: 50))
-        button.setTitle("", for: <#T##UIControl.State#>)
+        button.setTitle("录制", for: .normal)
+        button.setTitle("完成", for: .selected)
+        button.backgroundColor = .red
+        button.addTarget(self, action: #selector(), for: .touchUpInside)
+        view.addSubview(button)
     }
-    
+}
+
+//MARK:- Button
+extension ViewController {
+    @objc
+    private func buttonEvent(button: UIButton){
+        button.isSelected = !button.isSelected
+        isWritting = button.isSelected
+    }
 }
 
 //MARK:- Private
@@ -134,8 +146,16 @@ extension ViewController : AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptur
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         if output == videoDataOutput {
             //数据处理
+            if isWritting && !videoWriter.isWriting {
+                videoWriter.clearTempFile()
+                videoWriter.startWriting()
+            }else if !isWritting && videoWriter.isWriting {
+                videoWriter.stopWriting()
+            }
             
-            
+            if isWritting {
+                videoWriter.processImageData(sampleBuffer: sampleBuffer, layer: layer, atTime: CMSampleBufferGetPresentationTimeStamp(sampleBuffer))
+            }
         }else{
             
         }
