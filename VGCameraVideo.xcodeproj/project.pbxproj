@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		E34669D9255E1CCB00555F8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34669D8255E1CCB00555F8C /* AppDelegate.swift */; };
-		E34669DB255E1CCB00555F8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34669DA255E1CCB00555F8C /* SceneDelegate.swift */; };
 		E34669DD255E1CCB00555F8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34669DC255E1CCB00555F8C /* ViewController.swift */; };
 		E34669E0255E1CCB00555F8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34669DE255E1CCB00555F8C /* Main.storyboard */; };
 		E34669E2255E1CCF00555F8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34669E1255E1CCF00555F8C /* Assets.xcassets */; };
 		E34669E5255E1CCF00555F8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34669E3255E1CCF00555F8C /* LaunchScreen.storyboard */; };
+		E34669FA255E3A5700555F8C /* VGVideoWritter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34669F9255E3A5700555F8C /* VGVideoWritter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E34669D5255E1CCB00555F8C /* VGCameraVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGCameraVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34669D8255E1CCB00555F8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E34669DA255E1CCB00555F8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E34669DC255E1CCB00555F8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E34669DF255E1CCB00555F8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E34669E1255E1CCF00555F8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E34669E4255E1CCF00555F8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E34669E6255E1CCF00555F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E34669F9255E3A5700555F8C /* VGVideoWritter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGVideoWritter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				E34669D8255E1CCB00555F8C /* AppDelegate.swift */,
-				E34669DA255E1CCB00555F8C /* SceneDelegate.swift */,
 				E34669DC255E1CCB00555F8C /* ViewController.swift */,
+				E34669F9255E3A5700555F8C /* VGVideoWritter.swift */,
 				E34669DE255E1CCB00555F8C /* Main.storyboard */,
 				E34669E1255E1CCF00555F8C /* Assets.xcassets */,
 				E34669E3255E1CCF00555F8C /* LaunchScreen.storyboard */,
@@ -139,7 +139,7 @@
 			files = (
 				E34669DD255E1CCB00555F8C /* ViewController.swift in Sources */,
 				E34669D9255E1CCB00555F8C /* AppDelegate.swift in Sources */,
-				E34669DB255E1CCB00555F8C /* SceneDelegate.swift in Sources */,
+				E34669FA255E3A5700555F8C /* VGVideoWritter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,15 +286,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PA8N68X393;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = AT942ZRU45;
 				INFOPLIST_FILE = VGCameraVideo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = vege.VGCameraVideo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ilaihua.VGCameraVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Development_For_All;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,15 +308,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PA8N68X393;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = AT942ZRU45;
 				INFOPLIST_FILE = VGCameraVideo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = vege.VGCameraVideo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ilaihua.VGCameraVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Development_For_All;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
